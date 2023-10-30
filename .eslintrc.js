@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:react/recommended", "standard-with-typescript", "prettier"],
+  extends: ["standard-with-typescript", "plugin:react/recommended"],
   overrides: [
     {
       env: {
@@ -16,18 +16,13 @@ module.exports = {
     },
   ],
   parserOptions: {
-    project: "**/tsconfig.json",
+    project: "*/class/tsconfig.json",
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react"], // 필요없는 규칙은 off해서 꺼주세요
   rules: {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/strict-boolean-expressions": "off",
-    "@typescript-eslint/no-misused-promises": "off",
-    "@typescript-eslint/triple-slash-reference": "off",
-    "spaced-comment": "off",
   },
 };

@@ -1,21 +1,18 @@
-// import '@/styles/globals.css'
-import type { AppProps } from "next/app";
-import Layout from "../src/commons/layout";
-import ApolloSetting from "../src/components/commons/apollo";
 import { Global } from "@emotion/react";
-import { globalStyles } from "../src/commons/styles/globalStyles";
+import Apollo from "../src/components/commons/apollo";
+import "../styles/globals.css";
+import { RecoilRoot } from "recoil";
+import type { AppProps } from "next/app";
+import Layout from ".";
 
-export default function App({ Component }: AppProps): JSX.Element {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <div>
-      <ApolloSetting>
+    <RecoilRoot>
+      <Apollo>
         <>
-          <Global styles={globalStyles} />
-          <Layout>
-            <Component />
-          </Layout>
+          <Component {...pageProps} />
         </>
-      </ApolloSetting>
-    </div>
+      </Apollo>
+    </RecoilRoot>
   );
 }

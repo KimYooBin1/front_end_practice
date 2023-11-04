@@ -20,7 +20,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react"], // 필요없는 규칙은 off해서 꺼주세요
+plugins: ["react","jest/globals"],// 필요없는 규칙은 off해서 꺼주세요
   rules: {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",

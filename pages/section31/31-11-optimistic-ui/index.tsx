@@ -20,7 +20,7 @@ const LIKE_BOARD = gql`
 
 export default function(){
 	const [likeBoard] = useMutation<Pick<IMutation,"likeBoard">,IMutationLikeBoardArgs>(LIKE_BOARD)
-	const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(FETCH_BOARD,{variables :{boardId : "게시글 아이디 넣어주세요!"} })
+	const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(FETCH_BOARD,{variables :{boardId : "65446c345d6eaa0029f7c185"} })
 	
 	const onClickLike = ()=>{
 		//likeBoard 뮤테이션 함수를 실행하겠습니다.
@@ -43,7 +43,6 @@ export default function(){
 		},
 		// apollo 캐시를 직접 수정을 할 수 있었습니다.(백엔드 캐시가 아닙니다.) -> 느리지만 효율적입니다. (백엔드에 요청은 안하지만, 받아올때까지 기다려줘야 합니다.)
 			update(cache,{data}){
-                console.log("1")
 				// 이전 시간에는 modify를 사용했지만, 오늘은 writeQuery를 사용해보겠습니다.
 				cache.writeQuery({
                     
@@ -62,7 +61,6 @@ export default function(){
 			}
 		})
 	}
-
 	return(
 		<div>
 				<h1>옵티미스틱 UI</h1>

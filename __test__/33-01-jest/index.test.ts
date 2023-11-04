@@ -2,8 +2,8 @@ import { add } from "../../pages/section33/33-01-jest"
 
 it("더하기 잘되는지 test하기", ()=>{
     const result = add(3, 5)
-    // expect(result).toBe(8); success 
-    expect(result).toBe(7);  //fail
+    // expect(result).toBe(7); fail 
+    expect(result).toBe(8);  //success
     
 })
 

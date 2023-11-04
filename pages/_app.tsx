@@ -10,7 +10,8 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     <RecoilRoot>
       <Apollo>
         <>
-          <Component {...pageProps} />
+        {/* pageProps 란 ssr 를 통해 return 된 결과를 받아오는 변수이다 */}
+          <Component {...pageProps} />    
         </>
       </Apollo>
     </RecoilRoot>

@@ -17,7 +17,7 @@ export const getAccessToken = async (): Promise<string | undefined> => {
     const result = await graphQlClient.request<
       Pick<IMutation, "restoreAccessToken">
     >(RESTORE_ACCESS_TOKEN);
-    const newAccessToken = result?.restoreAccessToken.accessToken;
+    const newAccessToken = result.restoreAccessToken.accessToken;
 
     console.log(newAccessToken);
     return newAccessToken;

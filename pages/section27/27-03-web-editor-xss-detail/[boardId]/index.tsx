@@ -32,9 +32,16 @@ export default function StaticRoutingMovedPage() {
       {/* <div>내용: {data?.fetchBoard.contents}</div> */}
       <div
         dangerouslySetInnerHTML={{
-          __html: data?.fetchBoard?.contents,
+          __html: "<script>alert(\"1\")</script>",
         }}
       ></div>
+      {/* <div
+        dangerouslySetInnerHTML={{
+          __html: "<script>const aaa = localStorage.getItem(\"accessToken\"); alert(aaa)</script>",
+        }}
+      ></div> */}
+      
+      {/* <img src="c" onError={alert("123")} /> */}
     </>
   );
 }

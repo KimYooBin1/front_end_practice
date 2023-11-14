@@ -33,7 +33,7 @@ export default function WebEditorPage(): JSX.Element {
     const { Modal } = await import("antd");
 
     const result = await crateBoard({
-      variables: {
+      variables: {  
         createBoardInput: {
           writer: data.writer,
           password: data.password,

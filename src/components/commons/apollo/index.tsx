@@ -54,7 +54,6 @@ export default function Apollo(props: IApolloProps): JSX.Element {
             getAccessToken().then((newAccessToken) => {
               setAccessToken(newAccessToken ?? "");
               //3. 재발급 받은 accesstoken 으로 방금 실패한 쿼리 실행하기
-              console.log(newAccessToken);
               operation.setContext({
                 headers: {
                   ...operation.getContext().headers, //기존의 authorization: Bearer '만료된 토큰'
